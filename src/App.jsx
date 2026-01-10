@@ -34,7 +34,10 @@ export function App() {
           <BagIcon />
           <h1 className="sm:text-2xl text-[1rem]">Shopping Fest</h1>
         </div>
-        <Controls />
+        <Controls
+          rangeClasses=""
+          categoryClasses="max-w-50 ml-3.5 bg-neutral-50/30 text-neutral-50 border-neutral-100/30 rounded-[5px] border-4"
+        />
         <button
           className="mobile-filters-button px-2.5 cursor-pointer"
           onClick={handleOpenMobileFilters}

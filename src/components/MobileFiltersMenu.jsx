@@ -1,15 +1,15 @@
 import { RangeControl, CategoryControl } from "./Controls";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { filterContext } from "./context/FilterContext";
 import { OrderContext } from "./context/OrderContext";
 
 function MobileFiltersMenu({ className }) {
   const { filter, setFilter, products } = useContext(filterContext);
-  const { order, setOrder } = useContext(OrderContext);
+  const { setOrder } = useContext(OrderContext);
   return (
     <section
       onClick={(e) => e.stopPropagation()}
-      className="w-full max-w-100 bg-(--background-gray) flex flex-col justify-center items-center px-8 py-6 rounded-xl"
+      className={`${className} w-full max-w-100 bg-(--background-gray) flex flex-col justify-center items-center px-8 py-6 rounded-xl`}
     >
       <div className="w-full py-3 flex justify-start border-b-2 border-(--subtitle)">
         <h2 className="text-(--text) text-3xl">Filtros</h2>
@@ -26,16 +26,16 @@ function MobileFiltersMenu({ className }) {
             filter={filter}
             setFilter={setFilter}
             products={products}
-            className="max-w-50 bg-(--background) text-(--text) p-2"
+            className="ml-4 max-w-50 bg-(--background) text-(--text) p-2"
           />
         </div>
         <div className="flex items-center w-full">
           Ordenar:
           <select
-            className="max-w-32 p-2 bg-(--background)"
+            className="ml-4 max-w-32 p-2 bg-(--background) text-(--text)"
             onChange={(e) => setOrder(e.target.value)}
           >
-            <option value="none">Ninguno</option>
+            <option value="none">Orden predeterminado</option>
             <option
               className="bg-(--background-gray) text-(--text)"
               value="from cheapest to most expensive"

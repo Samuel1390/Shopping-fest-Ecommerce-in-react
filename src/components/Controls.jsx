@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { filterContext } from "./context/FilterContext";
 
-export function Controls() {
+export function Controls({ rangeClasses, categoryClasses }) {
   const { filter, setFilter, products } = useContext(filterContext);
 
   return (
@@ -9,13 +9,13 @@ export function Controls() {
       <RangeControl
         filter={filter}
         setFilter={setFilter}
-        className="sm:flex hidden"
+        className={rangeClasses}
       />
       <TextControl filter={filter} setFilter={setFilter} />
       <CategoryControl
         filter={filter}
         setFilter={setFilter}
-        className="max-w-50 ml-3.5 bg-neutral-50/30 text-neutral-50 border-neutral-100/30 rounded-[5px] border-4"
+        className={categoryClasses}
         products={products}
       />
     </div>
@@ -94,7 +94,12 @@ export function TextControl({ filter, setFilter, className }) {
     </div>
   );
 }
-export function CategoryControl({ filter, setFilter, className, products }) {
+export function CategoryControl({
+  filter,
+  setFilter,
+  categoryClasses,
+  products,
+}) {
   const handleCategory = (event) => {
     const value = event.target.value;
     let newFilter = { ...filter };
@@ -117,7 +122,7 @@ export function CategoryControl({ filter, setFilter, className, products }) {
   return (
     <select
       name="select"
-      className={`${className} category-control cursor-pointer`}
+      className={`${categoryClasses} cursor-pointer`}
       onChange={(e) => handleCategory(e)}
     >
       <option className="text-(--text) bg-(--background-gray)" value="all">
