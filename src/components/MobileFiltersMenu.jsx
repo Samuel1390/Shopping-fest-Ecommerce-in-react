@@ -9,7 +9,7 @@ function MobileFiltersMenu({ className }) {
   return (
     <section
       onClick={(e) => e.stopPropagation()}
-      className={`${className} w-full max-w-100 bg-(--background-gray) flex flex-col justify-center items-center px-8 py-6 rounded-xl`}
+      className={`${className} w-full max-w-100 bg-(--background-gray) flex flex-col justify-center items-center px-4 py-6 rounded-xl`}
     >
       <div className="w-full py-3 flex justify-start border-b-2 border-(--subtitle)">
         <h2 className="text-(--text) text-3xl">Filtros</h2>
@@ -26,13 +26,13 @@ function MobileFiltersMenu({ className }) {
             filter={filter}
             setFilter={setFilter}
             products={products}
-            className="ml-4 max-w-50 bg-(--background) text-(--text) p-2"
+            categoryClasses="ml-4 max-w-50 bg-(--background) text-(--text) p-2"
           />
         </div>
-        <div className="flex items-center w-full">
+        <div className="flex items-center justify-between w-full">
           Ordenar:
           <select
-            className="ml-4 max-w-32 p-2 bg-(--background) text-(--text)"
+            className="ml-4 max-w-50 p-2 bg-(--background) text-(--text)"
             onChange={(e) => setOrder(e.target.value)}
           >
             <option value="none">Orden predeterminado</option>
@@ -50,6 +50,15 @@ function MobileFiltersMenu({ className }) {
             </option>
           </select>
         </div>
+        <label
+          htmlFor="show-only-stock"
+          className="flex items-center justify-between gap-4 cursor-pointer group hover:bg-purple-700/45 p-4 border-purple-600 border-2 rounded-xl bg-purple-700/20"
+        >
+          <h2 className="group-hover:underline group-hover:text-sky-500/50 text-white text-md">
+            Mostrar solo los productos en stock
+          </h2>
+          <input id="show-only-stock" type="checkbox" />
+        </label>
       </div>
     </section>
   );

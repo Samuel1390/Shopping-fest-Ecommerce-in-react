@@ -15,7 +15,7 @@ export function Controls({ rangeClasses, categoryClasses }) {
       <CategoryControl
         filter={filter}
         setFilter={setFilter}
-        className={categoryClasses}
+        categoryClasses={categoryClasses}
         products={products}
       />
     </div>
@@ -82,10 +82,10 @@ export function TextControl({ filter, setFilter, className }) {
   };
 
   return (
-    <div className="flex justify-start shrink overflow-hidden grow-4 pl-5 h-12 text-neutral-50 bg-neutral-50/30 border-neutral-50 border-2 rounded-full">
+    <div className="flex justify-start shrink overflow-hidden grow-20 h-12 text-neutral-50 bg-neutral-50/30 border-neutral-50 border-2 rounded-full">
       <SearchIcon labelFor="search-bar" />
       <input
-        className={`${className} h-full mx-4 placeholder:pl-1 focus:outline-none grow-15`}
+        className={`${className} h-full mx-4 focus:outline-none grow-15`}
         type="text"
         id="search-bar"
         onChange={(e) => handleText(e.target.value)}
