@@ -16,7 +16,7 @@ const CartSidebar = ({ isOpen, onClose, cartItems }) => {
 
       <div className={`cart-sidebar ${isOpen ? "open" : ""}`}>
         <div className="sidebar-header">
-          <h2>🛒 Tu Carrito</h2>
+          <h2>Your cart</h2>
           <button className="close-sidebar" onClick={onClose}>
             ×
           </button>
@@ -25,8 +25,8 @@ const CartSidebar = ({ isOpen, onClose, cartItems }) => {
         <div className="cart-items">
           {cartItems.length === 0 ? (
             <div className="empty-cart">
-              <p>Tu carrito está vacío</p>
-              <span>¡Añade algunos productos!</span>
+              <p>Your cart is empty</p>
+              <span>¡Add some products!</span>
             </div>
           ) : (
             cartItems.map((item) => <CartItemInfo key={item.id} item={item} />)
@@ -40,14 +40,14 @@ const CartSidebar = ({ isOpen, onClose, cartItems }) => {
               <span>${total.toFixed(2)}</span>
             </div>
             <div className="summary-row">
-              <span>Envío</span>
-              <span>Gratis</span>
+              <span>Delivery</span>
+              <span>Free</span>
             </div>
             <div className="summary-row total">
               <span>Total</span>
               <span>${total.toFixed(2)}</span>
             </div>
-            <button className="checkout-btn">Proceder al Pago</button>
+            <button className="checkout-btn">buy</button>
           </div>
         )}
       </div>

@@ -19,7 +19,7 @@ const ProductGrid = ({ products }) => {
     if (order === "none") return 0;
     const priceIndex = prices.findIndex(
       (price) =>
-        price === product.price * (1 - product.discountPercentage / 100)
+        price === product.price * (1 - product.discountPercentage / 100),
     );
     if (order === "from cheapest to most expensive") {
       return priceIndex + 1;
@@ -32,7 +32,12 @@ const ProductGrid = ({ products }) => {
   };
   return (
     <div className="product-grid">
-      <h2 className="product-grid-title">Nuestros Productos</h2>
+      <h2 className="product-grid-title">Products</h2>
+      {!products.length && (
+        <h2 className="text-center text-xl font-bold text-gray-600">
+          Products not found
+        </h2>
+      )}
       <div className="products-container">
         {products.map((product) => (
           <ProductCard

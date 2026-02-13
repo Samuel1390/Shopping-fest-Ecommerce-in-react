@@ -77,7 +77,7 @@ export function App() {
       <main className="app-main">
         {isLoading && (
           <h2 className="is-loading absolute top-[50%] left-[50%] text-(--text) text-3xl font-bold">
-            Cargando lista de productos...
+            Loading products...
           </h2>
         )}
         <ProductGrid

@@ -57,7 +57,7 @@ export function RangeControl({ filter, setFilter, className }) {
       className={`${className}  cursor-text controls flex-col grow items-center justify-baseline gap-0.5 `}
     >
       <div className="flex items-center gap-3">
-        <label htmlFor="price">Precio</label>
+        <label htmlFor="price">Price</label>
         <span className="">${filter.price}</span>
       </div>
       <input
@@ -114,7 +114,7 @@ export function CategoryControl({
       }
     });
     categorys = categorys.filter(
-      (category, i) => category !== categorys[i - 1]
+      (category, i) => category !== categorys[i - 1],
     );
     return categorys;
   };
@@ -126,7 +126,7 @@ export function CategoryControl({
       onChange={(e) => handleCategory(e)}
     >
       <option className="text-(--text) bg-(--background-gray)" value="all">
-        Todos
+        All
       </option>
       {categorys.map((category) => {
         return (
