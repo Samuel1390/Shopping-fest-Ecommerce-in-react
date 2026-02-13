@@ -85,6 +85,9 @@ export function App() {
           products={filteredProducts}
           onAddToCart={handleAddToCart}
         />
+        <h2 className="w-screen fixed z-100 bottom-0 left-0 border-t text-gray-950 py-1 bg-yellow-200/70 border-t-yellow-300">
+          ⚠️ Important: This application is still under development.
+        </h2>
       </main>
 
       <CartSidebar
